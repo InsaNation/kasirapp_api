@@ -31,9 +31,11 @@ DB_PASSWORD=DATABASE_PASSWORD ( leave empty if not using password )
 ```bash
 php artisan migrate
 
-php artisan serve
+php artisan serve --port 8001 
 ```
-> you don't really need setup the .env, because you can use API that i have on my repo
+> Q : why port 8001 for API?
+
+> A : because if the port is not changed to 8001 it will collide with the cashier application
 
 <hr>
 
