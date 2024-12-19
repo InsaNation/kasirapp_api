@@ -12,7 +12,9 @@ class ItemController extends Controller
     {
         $search=$request->get('search');
         if ($search) {
-            return Item::where('name', 'like', "%$search%")->get();
+            return Item::where('name', 'like', "%$search%")
+                ->where('stock', '>', 0)
+                ->get();
         }
 
         return Item::all();

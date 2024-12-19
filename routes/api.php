@@ -7,6 +7,7 @@ use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\API\AuthController;
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -35,7 +36,12 @@ Route::delete('/items/delete/{id}', [ItemController::class, 'destroy']);
 // === TRANSAKSI ===
 
 // Route::get('/transaksi', [TransaksisController::class, 'index']);
+Route::get('/transaksi_kasir', [TransaksiController::class, 'getTransactions']);
 Route::post('/transaksi/store', [TransaksiController::class, 'store']);
+Route::get('/daily_income', [TransaksiController::class, 'daily_income']);
+Route::get('/daily_transaction', [TransaksiController::class, 'daily_transaction']);
+Route::get('/monthly_income', [TransaksiController::class, 'monthly_income']);
+Route::get('/monthly_transaction', [TransaksiController::class, 'monthly_transaction']);
 
 // === END TRANSAKSI ===
 
@@ -44,3 +50,5 @@ Route::post('/transaksi/store', [TransaksiController::class, 'store']);
 Route::get('/users', [UserController::class, 'index']);
 
 // === END USERS ===
+
+Route::get('chart', [TransaksiController::class, 'getDataChart']);

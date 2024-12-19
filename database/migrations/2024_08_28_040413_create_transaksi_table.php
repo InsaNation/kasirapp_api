@@ -16,6 +16,7 @@ class CreateTransaksiTable extends Migration
             $table->decimal('total_price', 15, 2);
             $table->decimal('change', 10, 2); // Add change column
             $table->decimal('bayar', 10, 2); // Add bayar column
+            $table->string('cashier')->nullable(); // Add cashier column
             $table->timestamps();
         });
     }

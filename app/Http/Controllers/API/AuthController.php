@@ -31,9 +31,13 @@ class AuthController extends Controller
 
             // Verifikasi password
             if (Hash::check($credentials['password'], $user->password)) {
+                // Generate a personal access token using Sanctum
+                $token = $user->createToken('authToken')->plainTextToken;
+
                 return response()->json([
                     'success' => true,
                     'message' => 'Login successful.',
+                    'token' => $token,  // Return the token here
                     'user' => [
                         'name' => $user->name,
                         'role' => $user->role,
@@ -53,4 +57,5 @@ class AuthController extends Controller
             ], 404);
         }
     }
+
 }

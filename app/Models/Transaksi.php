@@ -12,10 +12,15 @@ class Transaksi extends Model
 
     protected $table = 'transaksi';
 
-    protected $fillable = ['invoice_code', 'total_items', 'total_price','change','bayar'];
+    protected $fillable = ['invoice_code', 'total_items', 'total_price','change','bayar','cashier'];
 
     public function details()
     {
         return $this->hasMany(DetailTransaksi::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'cashier', 'name');
     }
 }
