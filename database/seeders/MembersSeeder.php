@@ -16,10 +16,10 @@ class MembersSeeder extends Seeder
     {
         $data = [
             [
-                'name' => 'arka',
+                'name' => 'test',
                 'role' => 'members',
-                'email' => 'arka@gmail.com',
-                'password' => Hash::make('arka'),
+                'email' => 'test@gmail.com',
+                'password' => Hash::make('test'),
                 'membersID' => rand(100000000000, 999999999999),
                 'is_deleted' => 0,
                 'created_at' => now(),

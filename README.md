@@ -1,12 +1,9 @@
 # Cashier API
-This is the API for my cashier project before
+
 
 ## How to open the project
 
 ```bash
-git clone https://github.com/NIxNref/ArkaCashier-API.git
-
-cd ArkaCashier-API
 
 composer install
 
